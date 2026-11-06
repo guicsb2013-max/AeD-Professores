@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Despedida | Guilherme ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #080b18;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* CABEÇALHO */
+
+header {
+    text-align: center;
+    padding: 90px 20px 65px;
+    background: radial-gradient(
+        ellipse at top, #302052, #080b18 75%
+    );
+}
+
+.ano {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #a78bfa;
+    border-radius: 30px;
+    background: #a78bfa15;
+    color: #d8c9ff;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: 800;
+    background: linear-gradient(
+        90deg, #00eaff, #a855f7, #ff4da6
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header p {
+    max-width: 650px;
+    margin: 20px auto;
+    color: #c1c4d7;
+    line-height: 1.9;
+}
+
+/* CARTÕES */
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit, minmax(min(100%, 280px), 1fr)
+    );
+    gap: 28px;
+    padding: 30px 0 90px;
+}
+
+.card {
+    --cor: white;
+    position: relative;
+    min-height: 350px;
+    padding: 35px 25px;
+    border-radius: 25px;
+    border: 1px solid var(--cor);
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform .35s, box-shadow .35s;
+    box-shadow: 0 0 20px #0005;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top right, #ffffff25, transparent 65%
+    );
+    z-index: -1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px color-mix(
+        in srgb, var(--cor) 45%, transparent
+    );
+}
+
+.icone {
+    font-size: 72px;
+    margin-bottom: 20px;
+    transition: transform .4s;
+    filter: drop-shadow(0 0 15px var(--cor));
+}
+
+.card:hover .icone {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.card h2 {
+    font-size: 24px;
+    color: var(--cor);
+}
+
+.materia {
+    margin: 10px 0 25px;
+    color: #ffffffd9;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 25px;
+    background: white;
+    color: #151525;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover { transform: scale(1.07); }
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* ESTILOS DE CADA MATÉRIA */
+
+.ciencias {
+    --cor: #56ffae;
+    background: linear-gradient(145deg, #06291d, #075b42);
+}
+
+.tecnologia {
+    --cor: #00eaff;
+    background: linear-gradient(145deg, #071a3a, #102d70);
+}
+
+.portugues {
+    --cor: #ffe0a3;
+    background: linear-gradient(145deg, #392312, #80542e);
+}
+
+.historia {
+    --cor: #a8ffd0;
+    background: linear-gradient(145deg, #15382f, #346854);
+}
+
+.ingles {
+    --cor: #ff9bb3;
+    background: linear-gradient(145deg, #14265c, #841d3b);
+}
+
+.artes {
+    --cor: #fff2a8;
+    background: linear-gradient(
+        135deg, #7024b0, #d52e87, #ec8d32
+    );
+}
+
+.empreendedorismo {
+    --cor: #ffd700;
+    background: linear-gradient(
+        145deg, #17130a, #49320b, #92650e
+    );
+}
+
+/* FRANCO - MATEMÁTICA */
+
+.matematica {
+    --cor: #72baff;
+    background: linear-gradient(
+        145deg, #0b174a, #2749a0
+    );
+}
+
+.matematica::after {
+    content: "π  ∑  √  ∞  x²";
+    position: absolute;
+    bottom: 14px;
+    color: #b2d9ff9c;
+    letter-spacing: 7px;
+    font-size: 18px;
+}
+
+/* ADRIANO - FILOSOFIA */
+
+.filosofia {
+    --cor: #d6b5ff;
+    background: linear-gradient(
+        145deg, #27143f, #59347c
+    );
+}
+
+.filosofia::after {
+    content: "PENSAR • QUESTIONAR • REFLETIR";
+    position: absolute;
+    bottom: 14px;
+    color: #e5ceff9c;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* ANTÔNIO - EDUCAÇÃO FÍSICA */
+
+.educacao-fisica {
+    --cor: #ffab75;
+    background: linear-gradient(
+        145deg, #53210f, #a64a22
+    );
+}
+
+.educacao-fisica::after {
+    content: "ENERGIA • MOVIMENTO • SUPERAÇÃO";
+    position: absolute;
+    bottom: 14px;
+    color: #ffe1cb9c;
+    font-size: 10px;
+}
+
+/* LULI - RELIGIÃO */
+
+.religiao {
+    --cor: #f7d9ff;
+    background: linear-gradient(
+        145deg, #382353, #8865a6
+    );
+}
+
+.religiao::after {
+    content: "RESPEITO • PAZ • GRATIDÃO";
+    position: absolute;
+    bottom: 14px;
+    color: #ffeaffb0;
+    font-size: 11px;
+}
+
+/* ANIMAÇÕES */
+
+.artes .icone,
+.empreendedorismo .icone,
+.matematica .icone,
+.filosofia .icone,
+.educacao-fisica .icone,
+.religiao .icone {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* JANELA DAS MENSAGENS */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #000c;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.ativo { display: flex; }
+
+.modal-conteudo {
+    --cor-modal: #b99aff;
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 50px 30px 35px;
+    border-radius: 25px;
+    background: #151a30;
+    border: 1px solid var(--cor-modal);
+    box-shadow: 0 0 50px #0009;
+    text-align: center;
+    animation: aparecer .35s ease;
+}
+
+.modal-conteudo h2 {
+    color: var(--cor-modal);
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.modal-conteudo p {
+    color: #e0e2f0;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.fechar {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    padding: 5px 12px;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 65px 20px;
+    text-align: center;
+    background: #0c1022;
+    border-top: 1px solid #ffffff20;
+}
+
+footer h2 {
+    color: #c9b2ff;
+    font-size: clamp(22px, 4vw, 30px);
+}
+
+footer p {
+    color: #aeb3c8;
+    margin-top: 18px;
+}
+
+.assinatura {
+    font-size: 22px;
+    color: #ffd6ec;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    header { padding: 65px 20px 35px; }
+    .card { min-height: 320px; }
+    .modal-conteudo { padding: 50px 22px 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="ano">🎓 MINHA DESPEDIDA • 2026</div>
+    <h1>Obrigado por Tudo! ❤️</h1>
+    <p>
+        Este ano me despeço da escola e começo
+        um novo capítulo da minha vida.
+        Antes de partir, quero agradecer a cada
+        professor que fez parte da minha caminhada.
+    </p>
+    <p>
+        Preparei uma mensagem especial para cada um.
+        Espero que gostem! ❤️
+    </p>
+</header>
+
+<main class="container">
+
+    <div class="card ciencias">
+        <div class="icone">🧬</div>
+        <h2>Professor Márcio</h2>
+        <p class="materia">🔬 Ciências</p>
+        <button onclick="abrir('marcio')">💚 Ler mensagem</button>
+    </div>
+
+    <div class="card tecnologia">
+        <div class="icone">💻</div>
+        <h2>Professor Augusto</h2>
+        <p class="materia">⚡ Tecnologia</p>
+        <button onclick="abrir('augusto')">💙 Ler mensagem</button>
+    </div>
+
+    <div class="card portugues">
+        <div class="icone">📖</div>
+        <h2>Professor Tussa</h2>
+        <p class="materia">✒️ Português</p>
+        <button onclick="abrir('tussa')">💛 Ler mensagem</button>
+    </div>
+
+    <div class="card historia">
+        <div class="icone">🌍</div>
+        <h2>Professor Júlio</h2>
+        <p class="materia">🧭 História e Geografia</p>
+        <button onclick="abrir('julio')">💚 Ler mensagem</button>
+    </div>
+
+    <div class="card ingles">
+        <div class="icone">🇬🇧</div>
+        <h2>Professora Nur</h2>
+        <p class="materia">🌐 Inglês</p>
+        <button onclick="abrir('nur')">❤️ Ler mensagem</button>
+    </div>
+
+    <div class="card artes">
+        <div class="icone">🎨</div>
+        <h2>Professora Carol</h2>
+        <p class="materia">✨ Artes</p>
+        <button onclick="abrir('carol')">💜 Ler mensagem</button>
+    </div>
+
+    <div class="card empreendedorismo">
+        <div class="icone">🚀</div>
+        <h2>Professor PH</h2>
+        <p class="materia">💡 Empreendedorismo</p>
+        <button onclick="abrir('ph')">💛 Ler mensagem</button>
+    </div>
+
+    <div class="card matematica">
+        <div class="icone">📐</div>
+        <h2>Professor Franco</h2>
+        <p class="materia">🔢 Matemática</p>
+        <button onclick="abrir('franco')">💙 Ler mensagem</button>
+    </div>
+
+    <div class="card filosofia">
+        <div class="icone">🧠</div>
+        <h2>Professor Adriano</h2>
+        <p class="materia">💭 Filosofia</p>
+        <button onclick="abrir('adriano')">💜 Ler mensagem</button>
+    </div>
+
+    <div class="card educacao-fisica">
+        <div class="icone">🏅</div>
+        <h2>Professor Antônio</h2>
+        <p class="materia">⚽ Educação Física</p>
+        <button onclick="abrir('antonio')">🧡 Ler mensagem</button>
+    </div>
+
+    <div class="card religiao">
+        <div class="icone">🕊️</div>
+        <h2>Professora Luli</h2>
+        <p class="materia">✨ Religião</p>
+        <button onclick="abrir('luli')">🤍 Ler mensagem</button>
+    </div>
+
+</main>
+
+<div class="modal" id="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="tituloMensagem"
+     aria-hidden="true">
+
+    <div class="modal-conteudo" id="modalConteudo">
+        <button class="fechar"
+                onclick="fechar()"
+                aria-label="Fechar mensagem">
+            &times;
+        </button>
+        <h2 id="tituloMensagem"></h2>
+        <p id="textoMensagem"></p>
+    </div>
+</div>
+
+<footer>
+    <h2>
+        O fim de um capítulo,
+        o começo de uma nova história. ❤️
+    </h2>
+    <p>
+        A escola ficará nas minhas lembranças,
+        mas os ensinamentos seguirão comigo.
+    </p>
+    <p class="assinatura">Com carinho, Guilherme ❤️</p>
+    <p>🎓 2026</p>
+</footer>
+
+<script>
+
+const mensagens = {
+
+    marcio: {
+        titulo: "🔬 Para o Professor Márcio",
+        cor: "#56ffae",
+        texto: `Professor Márcio,
+
+A ciência me ensinou que tudo está em constante transformação. Hoje, estou passando por uma grande mudança: minha despedida da escola.
+
+Quero agradecer por cada aula, cada explicação e por todo o conhecimento que o senhor compartilhou comigo.
+
+Sei que ainda tenho muito a descobrir e aprender, mas levarei comigo tudo o que aprendi nas suas aulas.
+
+Obrigado por fazer parte da minha história e por contribuir para a pessoa que estou me tornando.
+
+Com carinho, Guilherme. 💚`
+    },
+
+    augusto: {
+        titulo: "💻 Para o Professor Augusto",
+        cor: "#00eaff",
+        texto: `Professor Augusto,
+
+A tecnologia está sempre evoluindo, e sinto que minha vida também está entrando em uma nova fase.
+
+Quero agradecer por cada aula, cada descoberta e por tudo o que aprendi com o senhor.
+
+Sei que o futuro reserva muitas novidades e desafios, mas os conhecimentos que adquiri serão importantes na minha caminhada.
+
+Obrigado por compartilhar seus conhecimentos e por fazer parte da minha trajetória escolar.
+
+Com carinho, Guilherme. 💙`
+    },
+
+    tussa: {
+        titulo: "📖 Para a Professora Tussa",
+        cor: "#ffe0a3",
+        texto: `Professora Tussa,
+
+Toda história tem capítulos especiais, e minha passagem pela escola foi um dos mais importantes da minha vida.
+
+Agora estou chegando ao fim desse capítulo, mas não poderia partir sem agradecer à senhora.
+
+Obrigado por cada ensinamento, cada explicação e por toda a dedicação durante as aulas.
+
+As palavras podem formar textos e histórias, mas algumas também ficam guardadas na memória.
+
+E tenho certeza de que levarei muitos dos seus ensinamentos comigo.
+
+Com carinho, Guilherme. 💛`
+    },
+
+    julio: {
+        titulo: "🌎 Para o Professor Júlio",
+        cor: "#a8ffd0",
+        texto: `Professor Júlio,
+
+A história me ensinou a compreender o passado, enquanto a geografia me ajudou a conhecer melhor o mundo.
+
+Agora chegou a minha vez de seguir um novo caminho e começar a escrever outra parte da minha própria história.
+
+Antes disso, quero agradecer por cada aula e por tudo o que o senhor me ensinou.
+
+Sei que ainda tenho muitos lugares para conhecer, experiências para viver e histórias para construir.
+
+Obrigado por fazer parte de uma etapa tão importante da minha vida.
+
+Com carinho, Guilherme. 💚`
+    },
+
+    nur: {
+        titulo: "🇬🇧 Para a Professora Nur",
+        cor: "#ff9bb3",
+        texto: `Dear Teacher Nur,
+
+Thank you for everything!
+
+Professora Nur,
+
+Quero agradecer por cada aula, cada ensinamento e por toda a dedicação que a senhora teve ao ensinar inglês.
+
+Aprender outro idioma é descobrir novas formas de se comunicar e conhecer o mundo.
+
+Agora que estou me despedindo da escola, percebo como cada aprendizado foi importante para minha trajetória.
+
+Obrigado por fazer parte dessa fase da minha vida.
+
+I will always remember your lessons!
+
+Com carinho, Guilherme. ❤️`
+    },
+
+    carol: {
+        titulo: "🎨 Para a Professora Carol",
+        cor: "#fff2a8",
+        texto: `Professora Carol,
+
+A arte me ensinou que existem muitas formas de expressar sentimentos, ideias e criatividade.
+
+Hoje, quero usar algumas palavras para expressar minha gratidão.
+
+Obrigado por cada aula, cada atividade e por me mostrar diferentes maneiras de enxergar o mundo.
+
+Minha trajetória escolar foi como uma grande pintura, formada por momentos, experiências e pessoas especiais.
+
+E a senhora faz parte dessa obra que levarei para sempre na memória.
+
+Com carinho, Guilherme. 💜`
+    },
+
+    ph: {
+        titulo: "🚀 Para o Professor PH",
+        cor: "#ffd700",
+        texto: `Professor PH,
+
+O empreendedorismo me ensinou que grandes conquistas começam com ideias, coragem e determinação.
+
+Agora estou prestes a começar uma nova etapa da minha vida, cheia de sonhos, planos e desafios.
+
+Quero agradecer por cada aula, cada conselho e por tudo o que aprendi com o senhor.
+
+Sei que alcançar meus objetivos exigirá dedicação e esforço, mas também aprendi a importância de acreditar nas minhas ideias.
+
+Obrigado por me incentivar a pensar no futuro e por fazer parte da minha história.
+
+Com carinho, Guilherme. 💛🚀`
+    },
+
+    franco: {
+        titulo: "📐 Para o Professor Franco",
+        cor: "#72baff",
+        texto: `Professor Franco,
+
+A matemática me ensinou que nem sempre encontro a resposta de primeira, mas que com dedicação e paciência posso superar os desafios.
+
+Agora estou encerrando uma etapa importante da minha vida, e quero agradecer por todos os ensinamentos que recebi nas suas aulas.
+
+Obrigado por cada explicação, cada exercício e por me ajudar a desenvolver meu raciocínio.
+
+Sei que a vida ainda vai apresentar muitos problemas para resolver, mas também muitas oportunidades para aprender.
+
+Obrigado por fazer parte da minha caminhada.
+
+Com carinho, Guilherme. 💙`
+    },
+
+    adriano: {
+        titulo: "🧠 Para o Professor Adriano",
+        cor: "#d6b5ff",
+        texto: `Professor Adriano,
+
+A filosofia me mostrou a importância de pensar, questionar e buscar compreender melhor o mundo ao meu redor.
+
+Agora que estou me despedindo da escola, percebo que crescer também significa aprender a fazer minhas próprias escolhas.
+
+Quero agradecer por cada reflexão, cada conversa e por todos os conhecimentos que o senhor compartilhou comigo.
+
+Sei que ainda tenho muitas perguntas pela frente e nem sempre encontrarei respostas fáceis.
+
+Mas levarei comigo a importância de continuar aprendendo e refletindo.
+
+Com carinho, Guilherme. 💜`
+    },
+
+    antonio: {
+        titulo: "🏅 Para o Professor Antônio",
+        cor: "#ffab75",
+        texto: `Professor Antônio,
+
+A educação física me ensinou que a dedicação, o respeito e a persistência são importantes dentro e fora das atividades esportivas.
+
+Agora estou chegando ao fim da minha trajetória nesta escola, mas quero agradecer por todos os momentos de aprendizado.
+
+Obrigado pelas aulas, pelos incentivos e por me mostrar a importância do trabalho em equipe e da superação.
+
+Sei que a vida terá novos desafios, e espero enfrentá-los com determinação.
+
+Obrigado por fazer parte dessa etapa da minha história.
+
+Com carinho, Guilherme. 🧡`
+    },
+
+    luli: {
+        titulo: "🕊️ Para a Professora Luli",
+        cor: "#f7d9ff",
+        texto: `Professora Luli,
+
+Durante minha caminhada escolar, aprendi que o respeito, a empatia e a gratidão são valores importantes para a vida.
+
+Agora estou me despedindo da escola e quero agradecer por cada ensinamento e por cada reflexão que a senhora compartilhou comigo.
+
+Suas aulas me ajudaram a pensar sobre a importância de respeitar as pessoas e valorizar aquilo que realmente importa.
+
+Espero levar esses aprendizados comigo para os novos caminhos que vou seguir.
+
+Obrigado por fazer parte da minha história e por contribuir para meu crescimento.
+
+Com carinho, Guilherme. 🤍`
+    }
+
+};
+
+let ultimoBotao = null;
+
+function abrir(professor) {
+    const mensagem = mensagens[professor];
+    if (!mensagem) return;
+
+    ultimoBotao = document.activeElement;
+
+    document.getElementById("tituloMensagem")
+        .textContent = mensagem.titulo;
+
+    document.getElementById("textoMensagem")
+        .textContent = mensagem.texto;
+
+    document.getElementById("modalConteudo")
+        .style.setProperty("--cor-modal", mensagem.cor);
+
+    const modal = document.getElementById("modal");
+    modal.classList.add("ativo");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".fechar").focus();
+}
+
+function fechar() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("ativo");
+    modal.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    if (ultimoBotao) ultimoBotao.focus();
+}
+
+document.getElementById("modal")
+    .addEventListener("click", function(event) {
+        if (event.target === this) fechar();
+    });
+
+document.addEventListener("keydown", function(event) {
+    const modal = document.getElementById("modal");
+    if (!modal.classList.contains("ativo")) return;
+
+    if (event.key === "Escape") fechar();
+
+    if (event.key === "Tab") {
+        const botao = modal.querySelector(".fechar");
+        if (document.activeElement !== botao) {
+            event.preventDefault();
+            botao.focus();
+        }
+    }
+});
+
+</script>
+</body>
+</html>
